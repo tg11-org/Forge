@@ -38,7 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Third-party apps
+    'payments',
     # TG11 Forge Apps
+    'accounts',
     'pages',
     'services',
     'hosting',
@@ -151,4 +154,27 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 # https://docs.djangoproject.com/en/6.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Payment Configuration
+# Configure payment providers via environment variables for security
+
+# Django-payments requires PAYMENT_HOST setting
+PAYMENT_HOST = os.environ.get('PAYMENT_HOST', 'localhost:8000')
+PAYMENT_USES_SSL = os.environ.get('PAYMENT_USES_SSL', 'False').lower() == 'true'
+
+# Stripe Configuration
+STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY', '')
+STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY', '')
+
+# Django-payments configuration
+PAYMENT_MODEL = 'accounts.Payment'
+PAYMENT_VARIANTS = {
+    'stripe': ('payments.stripe.StripeProvider', {
+        'secret_key': STRIPE_SECRET_KEY,
+        'public_key': STRIPE_PUBLISHABLE_KEY,
+    }),
+}
+
+# Supported payment methods (configure as needed)
+PAYMENT_VARIANTS_API = 'stripe'  # Default payment variant
 
