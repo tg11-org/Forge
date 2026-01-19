@@ -5,5 +5,5 @@ app_name = 'hosting'
 
 urlpatterns = [
     path('', views.hosting_list, name='list'),
-    path('<int:hosting_id>/', views.hosting_detail, name='detail'),
+    path('<uuid:hosting_id>/', views.hosting_detail, name='detail'),
 ]
