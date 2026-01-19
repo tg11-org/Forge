@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Pricing - TG11 Forge{% endblock %}
+
+{% block content %}
+<div class="container">
+    <section class="pricing-section">
+        <h2>Our Pricing Plans</h2>
+        <p class="lead">Choose the plan that best fits your needs</p>
+        
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Starter</h3>
+                <div class="price">$99/mo</div>
+                <ul class="features">
+                    <li>Basic support</li>
+                    <li>5 projects</li>
+                    <li>10GB storage</li>
+                    <li>Email support</li>
+                </ul>
+                <a href="#" class="btn">Get Started</a>
+            </div>
+            
+            <div class="pricing-card featured">
+                <h3>Professional</h3>
+                <div class="price">$299/mo</div>
+                <ul class="features">
+                    <li>Priority support</li>
+                    <li>20 projects</li>
+                    <li>50GB storage</li>
+                    <li>Phone & email support</li>
+                </ul>
+                <a href="#" class="btn">Get Started</a>
+            </div>
+            
+            <div class="pricing-card">
+                <h3>Enterprise</h3>
+                <div class="price">Custom</div>
+                <ul class="features">
+                    <li>Dedicated support</li>
+                    <li>Unlimited projects</li>
+                    <li>Unlimited storage</li>
+                    <li>24/7 phone support</li>
+                </ul>
+                <a href="{% url 'pages:contact' %}" class="btn">Contact Us</a>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

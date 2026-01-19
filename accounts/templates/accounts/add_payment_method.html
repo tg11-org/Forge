@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Payment Method - TG11 Forge{% endblock %}
+
+{% block content %}
+<div class="container">
+    <section class="add-payment-section">
+        <h2>Add Payment Method</h2>
+        <p class="lead">Securely add a payment method for future transactions</p>
+        
+        <div class="payment-form">
+            <p class="info-note">
+                <strong>Note:</strong> To enable payment processing, configure your Stripe API keys in the environment variables:
+            </p>
+            <ul class="setup-instructions">
+                <li><code>STRIPE_SECRET_KEY</code> - Your Stripe secret key</li>
+                <li><code>STRIPE_PUBLISHABLE_KEY</code> - Your Stripe publishable key</li>
+            </ul>
+            
+            <div class="stripe-element-placeholder">
+                <h3>Stripe Payment Element will appear here</h3>
+                <p>Once Stripe is configured, you'll be able to:</p>
+                <ul>
+                    <li>Add credit/debit cards</li>
+                    <li>Save Apple Pay for one-click checkout</li>
+                    <li>Add Google Pay</li>
+                    <li>Connect bank accounts</li>
+                    <li>Use Link for instant payments</li>
+                </ul>
+                
+                <p class="integration-info">
+                    The Stripe Payment Element automatically supports all available payment methods
+                    based on your Stripe account configuration and user's location.
+                </p>
+            </div>
+            
+            <div class="form-actions">
+                <a href="{% url 'accounts:payment_methods' %}" class="btn">Back to Payment Methods</a>
+            </div>
+        </div>
+    </section>
+</div>
+
+<style>
+.add-payment-section {
+    padding: 2rem 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.info-note {
+    background-color: #fff3cd;
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+}
+
+.setup-instructions {
+    background-color: #f8f9fa;
+    padding: 1rem 1rem 1rem 2rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+}
+
+.setup-instructions code {
+    background-color: #e9ecef;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: monospace;
+}
+
+.stripe-element-placeholder {
+    border: 2px dashed var(--border-color);
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.stripe-element-placeholder h3 {
+    margin-top: 0;
+    color: var(--secondary-color);
+}
+
+.stripe-element-placeholder ul {
+    text-align: left;
+    display: inline-block;
+}
+
+.integration-info {
+    margin-top: 1.5rem;
+    font-style: italic;
+    color: #666;
+}
+
+.form-actions {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+</style>
+
+<!-- In production, you would include Stripe.js and implement the Payment Element -->
+<!--
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+const stripe = Stripe('{{ stripe_publishable_key }}');
+// Initialize Stripe Payment Element here
+</script>
+-->
+{% endblock %}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}TG11 Forge - Industrial Enterprise Services{% endblock %}</title>
+    
+    <!-- Static files -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/theme.css' %}">
+    
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><a href="{% url 'pages:home' %}">TG11 Forge</a></h1>
+                    <p class="tagline">Industrial Enterprise Services</p>
+                </div>
+                
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="{% url 'pages:home' %}">Home</a></li>
+                        <li><a href="{% url 'services:list' %}">Services</a></li>
+                        <li><a href="{% url 'hosting:list' %}">Hosting</a></li>
+                        <li><a href="{% url 'pricing:index' %}">Pricing</a></li>
+                        <li><a href="{% url 'portfolio:list' %}">Portfolio</a></li>
+                        <li><a href="{% url 'notes:list' %}">Blog</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-controls">
+                    <!-- Theme Picker Placeholder -->
+                    <div class="theme-picker">
+                        <button id="theme-toggle" aria-label="Toggle theme">
+                            <span class="theme-icon">🌓</span>
+                        </button>
+                    </div>
+                    
+                    <!-- Dyslexia Toggle Placeholder -->
+                    <div class="dyslexia-toggle">
+                        <button id="dyslexia-toggle" aria-label="Toggle dyslexia-friendly font">
+                            <span class="dyslexia-icon">Aa</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        {% block content %}
+        {% endblock %}
+    </main>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TG11 Forge</h3>
+                    <p>Providing industrial enterprise services and solutions.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="{% url 'pages:about' %}">About</a></li>
+                        <li><a href="{% url 'services:list' %}">Services</a></li>
+                        <li><a href="{% url 'pages:contact' %}">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="{% url 'services:list' %}">Enterprise Services</a></li>
+                        <li><a href="{% url 'hosting:list' %}">Hosting Solutions</a></li>
+                        <li><a href="{% url 'portfolio:list' %}">Portfolio</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="{% url 'notes:list' %}">Blog</a></li>
+                        <li><a href="{% url 'pricing:index' %}">Pricing</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; {% now "Y" %} TG11 Forge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/theme.js' %}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

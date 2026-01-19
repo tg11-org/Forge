@@ -1,0 +1,31 @@
+"""
+Base models for TG11 Forge project.
+All models should inherit from BaseModel to use UUID primary keys.
+"""
+import uuid
+from django.db import models
+
+
+class BaseModel(models.Model):
+    """
+    Abstract base model with UUID primary key and timestamps.
+    All app models should inherit from this.
+    """
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False,
+        help_text="Unique identifier for this record"
+    )
+    created_at = models.DateTimeField(
+        auto_now_add=True,
+        help_text="Timestamp when the record was created"
+    )
+    updated_at = models.DateTimeField(
+        auto_now=True,
+        help_text="Timestamp when the record was last updated"
+    )
+
+    class Meta:
+        abstract = True
+        ordering = ['-created_at']

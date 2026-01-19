@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Hosting Detail - TG11 Forge{% endblock %}
+
+{% block content %}
+<div class="container">
+    <section class="hosting-detail">
+        <h2>Hosting Solution Details</h2>
+        <p>Detailed information about hosting solution #{{ hosting_id }}</p>
+        
+        <div class="hosting-content">
+            <h3>Specifications</h3>
+            <ul>
+                <li>CPU: High-performance processors</li>
+                <li>RAM: Scalable memory options</li>
+                <li>Storage: SSD storage for optimal performance</li>
+                <li>Bandwidth: Unlimited data transfer</li>
+            </ul>
+            
+            <h3>Features</h3>
+            <ul>
+                <li>99.9% uptime guarantee</li>
+                <li>24/7 technical support</li>
+                <li>Automated backups</li>
+                <li>Security monitoring</li>
+            </ul>
+        </div>
+        
+        <a href="{% url 'hosting:list' %}" class="btn">Back to Hosting Solutions</a>
+    </section>
+</div>
+{% endblock %}

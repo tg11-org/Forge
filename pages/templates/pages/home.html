@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - TG11 Forge{% endblock %}
+
+{% block content %}
+<div class="container">
+    <section class="hero">
+        <h2>Welcome to TG11 Forge</h2>
+        <p class="lead">Your trusted partner for industrial enterprise services and solutions</p>
+    </section>
+    
+    <section class="services-overview">
+        <h3>Our Services</h3>
+        <div class="service-cards">
+            <div class="card">
+                <h4>Enterprise Services</h4>
+                <p>Comprehensive enterprise solutions tailored to your business needs.</p>
+                <a href="{% url 'services:list' %}" class="btn">Learn More</a>
+            </div>
+            <div class="card">
+                <h4>Hosting Solutions</h4>
+                <p>Reliable and scalable hosting infrastructure for your applications.</p>
+                <a href="{% url 'hosting:list' %}" class="btn">Learn More</a>
+            </div>
+            <div class="card">
+                <h4>Portfolio</h4>
+                <p>Explore our successful projects and case studies.</p>
+                <a href="{% url 'portfolio:list' %}" class="btn">View Portfolio</a>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
