@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Portfolio - TG11 Forge{% endblock %}
+
+{% block content %}
+<div class="container">
+    <section class="portfolio-section">
+        <h2>Our Portfolio</h2>
+        <p class="lead">Explore our successful projects and case studies</p>
+        
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <h3>Enterprise Dashboard</h3>
+                <p>A comprehensive business intelligence dashboard for a Fortune 500 company.</p>
+                <a href="{% url 'portfolio:detail' 1 %}" class="btn">View Project</a>
+            </div>
+            
+            <div class="portfolio-card">
+                <h3>E-commerce Platform</h3>
+                <p>Custom e-commerce solution handling millions of transactions monthly.</p>
+                <a href="{% url 'portfolio:detail' 2 %}" class="btn">View Project</a>
+            </div>
+            
+            <div class="portfolio-card">
+                <h3>Mobile Application</h3>
+                <p>Cross-platform mobile app with over 1 million downloads.</p>
+                <a href="{% url 'portfolio:detail' 3 %}" class="btn">View Project</a>
+            </div>
+            
+            <div class="portfolio-card">
+                <h3>Cloud Migration</h3>
+                <p>Successful migration of legacy systems to cloud infrastructure.</p>
+                <a href="{% url 'portfolio:detail' 4 %}" class="btn">View Project</a>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

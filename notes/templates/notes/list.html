@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Blog - TG11 Forge{% endblock %}
+
+{% block content %}
+<div class="container">
+    <section class="blog-section">
+        <h2>Blog & Articles</h2>
+        <p class="lead">Insights, news, and updates from TG11 Forge</p>
+        
+        <div class="blog-grid">
+            <article class="blog-card">
+                <h3>Getting Started with Cloud Infrastructure</h3>
+                <p class="meta">January 15, 2026 • 5 min read</p>
+                <p>Learn the basics of setting up a robust cloud infrastructure for your business.</p>
+                <a href="{% url 'notes:detail' 1 %}" class="btn">Read More</a>
+            </article>
+            
+            <article class="blog-card">
+                <h3>Best Practices for Enterprise Security</h3>
+                <p class="meta">January 10, 2026 • 7 min read</p>
+                <p>Discover essential security practices to protect your enterprise applications.</p>
+                <a href="{% url 'notes:detail' 2 %}" class="btn">Read More</a>
+            </article>
+            
+            <article class="blog-card">
+                <h3>Scaling Your Applications Efficiently</h3>
+                <p class="meta">January 5, 2026 • 6 min read</p>
+                <p>Strategies for scaling your applications to handle growing user demands.</p>
+                <a href="{% url 'notes:detail' 3 %}" class="btn">Read More</a>
+            </article>
+            
+            <article class="blog-card">
+                <h3>The Future of Industrial IoT</h3>
+                <p class="meta">December 28, 2025 • 8 min read</p>
+                <p>Exploring the latest trends and innovations in industrial IoT solutions.</p>
+                <a href="{% url 'notes:detail' 4 %}" class="btn">Read More</a>
+            </article>
+        </div>
+    </section>
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+/* TG11 Forge - Theme Styles */
+
+/* Light Theme (Default) */
+body {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --bg-color: #ffffff;
+    --header-bg: #1a252f;
+    --footer-bg: #1a252f;
+    --border-color: #ddd;
+}
+
+/* Dark Theme */
+body.dark-theme {
+    --primary-color: #ecf0f1;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-color: #ecf0f1;
+    --bg-color: #2c3e50;
+    --header-bg: #1a252f;
+    --footer-bg: #1a252f;
+    --border-color: #34495e;
+}
+
+body.dark-theme {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* High Contrast Theme */
+body.high-contrast-theme {
+    --primary-color: #000000;
+    --secondary-color: #ffff00;
+    --accent-color: #ff0000;
+    --text-color: #000000;
+    --bg-color: #ffffff;
+    --header-bg: #000000;
+    --footer-bg: #000000;
+    --border-color: #000000;
+}
+
+body.high-contrast-theme {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+body.high-contrast-theme .site-header,
+body.high-contrast-theme .site-footer {
+    border: 2px solid var(--border-color);
+}

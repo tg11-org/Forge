@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Portfolio Detail - TG11 Forge{% endblock %}
+
+{% block content %}
+<div class="container">
+    <section class="portfolio-detail">
+        <h2>Project Details</h2>
+        <p>Detailed information about project #{{ portfolio_id }}</p>
+        
+        <div class="project-content">
+            <h3>Overview</h3>
+            <p>This project showcases our expertise in delivering high-quality solutions.</p>
+            
+            <h3>Technologies Used</h3>
+            <ul>
+                <li>Technology 1</li>
+                <li>Technology 2</li>
+                <li>Technology 3</li>
+            </ul>
+            
+            <h3>Key Achievements</h3>
+            <ul>
+                <li>Achievement 1</li>
+                <li>Achievement 2</li>
+                <li>Achievement 3</li>
+            </ul>
+            
+            <h3>Client Testimonial</h3>
+            <blockquote>
+                "Working with TG11 Forge was an excellent experience. They delivered exceptional results."
+            </blockquote>
+        </div>
+        
+        <a href="{% url 'portfolio:list' %}" class="btn">Back to Portfolio</a>
+    </section>
+</div>
+{% endblock %}

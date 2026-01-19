@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Services - TG11 Forge{% endblock %}
+
+{% block content %}
+<div class="container">
+    <section class="services-section">
+        <h2>Enterprise Services</h2>
+        <p class="lead">Comprehensive solutions for your business needs</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Cloud Integration</h3>
+                <p>Seamless integration of cloud services into your existing infrastructure.</p>
+                <a href="{% url 'services:detail' 1 %}" class="btn">Learn More</a>
+            </div>
+            
+            <div class="service-card">
+                <h3>Application Development</h3>
+                <p>Custom application development tailored to your business requirements.</p>
+                <a href="{% url 'services:detail' 2 %}" class="btn">Learn More</a>
+            </div>
+            
+            <div class="service-card">
+                <h3>IT Consulting</h3>
+                <p>Expert consulting services to optimize your IT infrastructure.</p>
+                <a href="{% url 'services:detail' 3 %}" class="btn">Learn More</a>
+            </div>
+            
+            <div class="service-card">
+                <h3>Security Solutions</h3>
+                <p>Comprehensive security solutions to protect your business assets.</p>
+                <a href="{% url 'services:detail' 4 %}" class="btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
