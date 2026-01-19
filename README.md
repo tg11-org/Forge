@@ -9,11 +9,37 @@ TG11 Forge is a Django-based website for industrial enterprise services. The pro
 ## Features
 
 - **Clean App Structure**: Organized into logical apps (pages, services, hosting, pricing, portfolio, notes)
+- **PostgreSQL Database**: Configured for PostgreSQL with UUID primary keys
+- **UUID Primary Keys**: All models use UUIDs instead of incremental integers for better security and distributed system compatibility
 - **Responsive Design**: Mobile-friendly layout with responsive navigation
 - **Theme Picker**: Toggle between Light, Dark, and High Contrast themes
 - **Dyslexia-Friendly Mode**: Optional dyslexia-friendly font toggle for improved accessibility
 - **Reusable Templates**: Base template with shared header and footer
 - **Static Files**: Organized CSS and JavaScript files
+
+## Database
+
+This project uses **PostgreSQL** with **UUID primary keys** for all models. See [DATABASE.md](DATABASE.md) for detailed setup instructions.
+
+### Quick Database Setup
+
+**For Development (SQLite)**:
+```bash
+export USE_SQLITE=True
+python manage.py migrate
+```
+
+**For Production (PostgreSQL)**:
+```bash
+# Set up PostgreSQL and configure environment variables
+export DB_NAME=forge_db
+export DB_USER=forge_user
+export DB_PASSWORD=your_password
+export DB_HOST=localhost
+export DB_PORT=5432
+
+python manage.py migrate
+```
 
 ## Project Structure
 

@@ -80,12 +80,34 @@ WSGI_APPLICATION = 'forge.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+# PostgreSQL Configuration
+# For local development, you can use SQLite by setting USE_SQLITE=True in environment
+# For production, configure PostgreSQL connection parameters via environment variables
+
+import os
+
+USE_SQLITE = os.environ.get('USE_SQLITE', 'False').lower() == 'true'
+
+if USE_SQLITE:
+    # SQLite for quick local development
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+else:
+    # PostgreSQL (recommended for production)
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.environ.get('DB_NAME', 'forge_db'),
+            'USER': os.environ.get('DB_USER', 'forge_user'),
+            'PASSWORD': os.environ.get('DB_PASSWORD', 'forge_password'),
+            'HOST': os.environ.get('DB_HOST', 'localhost'),
+            'PORT': os.environ.get('DB_PORT', '5432'),
+        }
+    }
 
 
 # Password validation
