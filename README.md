@@ -145,4 +145,4 @@ See LICENSE file for details.
 
 ## Contact
 
-For more information, visit the contact page or email info@tg11forge.com
+For more information, visit the contact page or email gage@tg11.org
