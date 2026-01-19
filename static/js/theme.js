@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 localStorage.setItem('theme', 'high-contrast-theme');
             } else if (body.classList.contains('high-contrast-theme')) {
                 body.classList.remove('high-contrast-theme');
-                localStorage.setItem('theme', '');
+                localStorage.removeItem('theme');
             } else {
                 body.classList.add('dark-theme');
                 localStorage.setItem('theme', 'dark-theme');
